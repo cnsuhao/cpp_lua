@@ -1,0 +1,4 @@
+$#include "LuaExportSample.h"
+$using namespace LuaExport;
+
+void Script_GetNumber(int& nFirst, int& nSecond);
