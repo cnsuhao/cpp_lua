@@ -61,7 +61,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="lua5.1.lib"
+				AdditionalDependencies="lua5.1.lib toluapp_d.lib"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="../ThirdParty/"
 				GenerateDebugInformation="true"
@@ -175,11 +175,23 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\LuaExportSample.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\SoLua.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\Test.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\toluapp.pkg"
+				>
+			</File>
+			<File
+				RelativePath=".\toluapp_lua.cpp"
 				>
 			</File>
 		</Filter>
@@ -188,6 +200,10 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
+			<File
+				RelativePath=".\LuaExportSample.h"
+				>
+			</File>
 			<File
 				RelativePath=".\SoLua.h"
 				>
