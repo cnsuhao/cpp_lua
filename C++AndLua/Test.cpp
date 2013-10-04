@@ -14,5 +14,8 @@ void main()
 	int nExeResult = 0;
 	SoLua::ExecuteFunc(L, "add", "ii>i", 3, 4, &nExeResult);
 	SoLua::ExecuteTableFunc(L, "adddd", "add", "ii>i", 3, 4, &nExeResult);
+
+	SoLua::ExecuteTrunk(L, "print(\"oil\")", 0);
+
 	lua_close(L);
 }
