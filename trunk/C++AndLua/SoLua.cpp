@@ -102,6 +102,30 @@ namespace GGUI
 		return bResult;
 	}
 	//--------------------------------------------------------------------
+	bool SoLua::ExecuteTrunk(lua_State* L, const char* pBuff, __int32 nBuffSize)
+	{
+		if (L==0 || pBuff==0)
+		{
+			return false;
+		}
+		if (nBuffSize <= 0)
+		{
+			nBuffSize = (__int32)strlen(pBuff);
+		}
+		bool bResult = true;
+		int nError = luaL_loadbuffer(L, pBuff, nBuffSize, 0) || lua_pcall(L, 0, 0, 0);
+		if (nError != 0)
+		{
+			//出错了。
+			const char* pszErrorMsg = lua_tostring(L, -1);
+			OutputDebugStringA(pszErrorMsg);
+			//从栈中弹出错误信息。
+			lua_pop(L, 1);
+			bResult = false;
+		}
+		return bResult;
+	}
+	//--------------------------------------------------------------------
 	bool SoLua::LoadFileToBuff(const char* pszFile, char** ppBuff, __int32& nBuffSize)
 	{
 		if (pszFile==0 || ppBuff==0)

@@ -24,6 +24,9 @@ namespace GGUI
 		static bool ExecuteTableFunc(lua_State* L, const char* pszTable, const char* pszFunc, const char* sig, ...);
 		//载入并执行一个lua文件。
 		static bool ExecuteFile(lua_State* L, const char* pszLuaFile);
+		//执行一个代码块。可以是文本代码块，也可以是二进制代码块。
+		//如果nBuffSize值为0，则认为pBuff是一个带结束符的字符串，本函数内部会计算字符串长度。
+		static bool ExecuteTrunk(lua_State* L, const char* pBuff, __int32 nBuffSize);
 
 	private:
 		//从磁盘上打开指定的文件，把文件内容读取到指定的Buff内。
